@@ -1,35 +1,52 @@
 import { Dimensions, StyleSheet } from "react-native";
+// import { ButtonHeight } from "../components";
 
-var backgroundColor = "#0b0c2b";
+var backgroundColor = "red";
 var topTextColor = "aqua";
 var borderBottomColor = "red";
-var CardTitleColor = "#94ffb8";
-var CardTextColor = "white";
+
 var deviceWidth = Dimensions.get("window").width;
 var deviceHeight = Dimensions.get("window").height;
 
 export const windowWidth = Dimensions.get("window").width;
 export const windowHeight = Dimensions.get("window").height;
 export const Colors = {
-  mainBackgroundColor: "rgba(0,0,0,0.9)",
-  shadowStartColor: "#2e7528",
+  CardTitleColor: "#ffdfbf",
+  CardTextColor: "#fff3e8",
+  mainBackgroundColor: "rgba(0,0,0,0.85)",
+  authBackgroundColor: "rgba(0,0,0,0.6)",
+  shadowStartColor: "#5e574e",
   shadowEndColor: "transparent",
-  buttonBackground: "purple",
-  iconColor: "#34b004",
+  buttonBackground: "rgba(230, 149, 69,0.6)",
+  iconColor: "#b38f60",
   headerBackground: "rgb(0,0,0)",
-  headerTextColor: "aqua",
-  iconViewBackgroundColor: "#13102e",
+  headerTextColor: "#ffe8d1",
+  iconViewBackgroundColor: "rgba(28, 22, 12,0.9)",
   statusBarColor: "#303461",
-  textinputBackground:"transparent",
-  textinputCoverBackground:"rgba(0,0,0,0)",
-  textBorderColor:'aqua',
-  labelColor:"aqua",
-  textinputColor:"white",
-  textinputPlaceholderColor:'chartreuse',
-  selectionColor:"chartreuse",
-  
+  textinputBackground: "transparent",
+  textinputCoverBackground: "rgba(0,0,0,0)",
+  textBorderColor: "#ffdfbf",
+  labelColor: "#ffeddb",
+  textinputColor: "white",
+  textinputPlaceholderColor: "#fff7f0",
+  selectionColor: "chartreuse",
 };
 export const styles = StyleSheet.create({
+  imagecontainer: {
+    height: deviceHeight,
+    width: deviceWidth,
+  },
+  authcontainer: {
+    flex: 1,
+    backgroundColor: Colors.authBackgroundColor,
+  },
+  inputsWrap: {
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
+
+    flex: 0.7,
+  },
   screentitle: {
     flexDirection: "row",
 
@@ -40,7 +57,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   homescreentitle: {
-    flexDirection: "row", 
+    flexDirection: "row",
 
     flex: 1,
     width: windowWidth / 1.1,
@@ -48,9 +65,7 @@ export const styles = StyleSheet.create({
     alignContent: "center",
     alignItems: "center",
   },
-  
-  
-  
+
   titletext: {
     color: Colors.headerTextColor,
     fontSize: windowWidth / 25,
@@ -74,8 +89,21 @@ export const styles = StyleSheet.create({
     backgroundColor: Colors.mainBackgroundColor,
   },
   buttonView: {
+    margin: 3,
     backgroundColor: Colors.buttonBackground,
-    borderRadius: 2,
+    borderRadius: 7,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonTitle: {
+    color: "white",
+  },
+  buttonWrap: {
+    marginTop: 10,
+    width: deviceWidth / 1.02,
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
   },
   topView: {},
   topText: {
@@ -110,45 +138,39 @@ export const styles = StyleSheet.create({
     position: "absolute",
   },
   CardTitle: {
-    color: CardTitleColor,
+    color: Colors.CardTitleColor,
   },
   floatText: {
-    color: CardTextColor,
+    color: Colors.CardTextColor,
   },
   blurIconContainer: {
     position: "absolute",
     zIndex: 2,
   },
-  textinputCoverView:{
-    height:deviceHeight/10,
-    width:deviceWidth/1.1,
-    backgroundColor:Colors.textinputCoverBackground,
-    flexDirection:'column',
-    marginTop:10,
-    
-    
+  textinputCoverView: {
+    height: deviceHeight / 10,
+    width: deviceWidth / 1.1,
+    backgroundColor: Colors.textinputCoverBackground,
+    flexDirection: "column",
+    marginTop: 10,
   },
-  
-  textinputView:{
-    height:deviceHeight/14,
-    width:deviceWidth/1.1,
-    borderRadius:5,
-    backgroundColor:Colors.textinputBackground,
-    borderColor:Colors.textBorderColor,
-    borderWidth:0.4,
-    
+
+  textinputView: {
+    height: deviceHeight / 14,
+    width: deviceWidth / 1.1,
+    borderRadius: 5,
+    backgroundColor: Colors.textinputBackground,
+    borderColor: Colors.textBorderColor,
+    borderWidth: 0.4,
   },
-  textinput:{
-    height:deviceHeight/14.2,
-    width:deviceWidth/1.11,
-    backgroundColor:Colors.textinputBackground,
-    color:Colors.textinputColor,
-    
-    
+  textinput: {
+    height: deviceHeight / 14.2,
+    width: deviceWidth / 1.11,
+    backgroundColor: Colors.textinputBackground,
+    color: Colors.textinputColor,
   },
-  inputlabel:{
-    color:Colors.labelColor,
-    fontSize:deviceWidth/23,
-    
-  }
+  inputlabel: {
+    color: Colors.labelColor,
+    fontSize: deviceWidth / 23,
+  },
 });

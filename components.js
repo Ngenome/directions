@@ -27,34 +27,44 @@ import {
   Feather,
   Entypo,
 } from "@expo/vector-icons";
-
+import { deviceHeight, deviceWidth } from "./screens/home";
 const iconColor = Colors.iconColor;
 export const AuthcustomInput = (props) => {
   return (
     <View style={styles.textinputCoverView}>
-    <Text style={styles.inputlabel}>{props.label}</Text>
-    <View style={styles.textinputView}>
-      <TextInput style={styles.textinput}
-      autoCompleteType={props.auto!== undefined?props.auto:'off'}
-      multiline={false}
-      onChangeText={()=>{
-        props.onChangeFunction
-      }}
-      autoCorrect={false}
-      autoFocus={props.focus!==undefined?props.focus:false}
-      underlineColorAndroid='transparent'
-      keyboardType={props.keyboard!==undefined?props.keyboard:'default'}
-      placeholder={props.placeholder}
-      placeholderTextColor={props.placeholderColor!==undefined?props.placeholderColor:Colors.textinputPlaceholderColor}
-      secureTextEntry={props.secure!==undefined?props.secure:false}
-      selectionColor={props.selectionColor!==undefined?props.selectionColor:Colors.selectionColor}
-      
-      />
+      <Text style={styles.inputlabel}>{props.label}</Text>
+      <View style={styles.textinputView}>
+        <TextInput
+          style={styles.textinput}
+          autoCompleteType={props.auto !== undefined ? props.auto : "off"}
+          multiline={false}
+          onChangeText={() => {
+            props.onChangeFunction;
+          }}
+          autoCorrect={false}
+          autoFocus={props.focus !== undefined ? props.focus : false}
+          underlineColorAndroid="transparent"
+          keyboardType={
+            props.keyboard !== undefined ? props.keyboard : "default"
+          }
+          placeholder={props.placeholder}
+          placeholderTextColor={
+            props.placeholderColor !== undefined
+              ? props.placeholderColor
+              : Colors.textinputPlaceholderColor
+          }
+          secureTextEntry={props.secure !== undefined ? props.secure : false}
+          selectionColor={
+            props.selectionColor !== undefined
+              ? props.selectionColor
+              : Colors.selectionColor
+          }
+        />
       </View>
     </View>
   );
 };
-  
+
 export function Card(props) {
   const Blur = React.useRef(null);
   const navigation = useNavigation();
@@ -183,4 +193,31 @@ export function IconSelector(props) {
       <Octicons name={props.name} size={props.size} color={iconmaincolor} />
     );
   }
+}
+
+export function Button(props) {
+  return (
+    <TouchableOpacity>
+      <View
+        style={[
+          styles.buttonView,
+          {
+            height: deviceHeight / props.heightRatio,
+            width: deviceWidth / props.widthRatio,
+          },
+        ]}
+      >
+        <Text
+          style={[
+            styles.buttonTitle,
+            {
+              fontSize: deviceHeight / props.heightRatio / 2.3,
+            },
+          ]}
+        >
+          {props.title}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
 }
